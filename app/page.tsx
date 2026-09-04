@@ -4,9 +4,9 @@ import NavBar, { Brand } from "./components/NavBar";
 import Reveal from "./components/Reveal";
 
 const services = [
-  { icon: "🫧", title: "元气基础洗护", description: "洁耳、剪甲、梳毛、双重清洁、护毛、吹干与脚底毛修剪。", label: "猫咪 / 小型犬", price: "¥88" },
-  { icon: "✂️", title: "精致造型护理", description: "包含基础洗护，由专业美容师根据体型与生活习惯定制造型。", label: "全犬种", price: "¥168" },
-  { icon: "🌿", title: "敏感肌舒缓浴", description: "温和低敏配方，搭配皮肤状态检查和深层保湿，缓解干燥不适。", label: "专项护理", price: "¥128" },
+  { icon: "🫧", title: "日常焕新洗护", fit: "适合定期清洁、维持清爽", benefit: "一次完成基础护理，让毛发蓬松、体味更清新。", items: ["双重清洁与护毛", "洁耳、剪甲、脚底毛", "皮毛状态反馈"], label: "猫咪 / 小型犬", price: "¥88" },
+  { icon: "✂️", title: "精致造型护理", fit: "适合换造型或精细修剪", benefit: "根据体型与生活习惯定制造型，好看也更方便日常打理。", items: ["包含日常焕新洗护", "一对一造型沟通", "全身精细修剪"], label: "全犬种", price: "¥168", featured: true },
+  { icon: "🌿", title: "敏感肌舒缓浴", fit: "适合干燥、易痒、敏感皮肤", benefit: "低敏清洁搭配深层保湿，减少刺激，帮助恢复皮肤舒适感。", items: ["洗护前皮肤检查", "温和低敏配方", "深层保湿与护理建议"], label: "专项护理", price: "¥128" },
 ];
 
 const steps = [
@@ -40,8 +40,15 @@ export default function Home() {
 
       <main>
         <section className="services" id="services"><Reveal className="wrap">
-          <div className="section-head"><div><div className="eyebrow">OUR SERVICES</div><h2>刚刚好的洗护方案</h2></div><p>没有隐形消费，也不做流水线服务。根据宠物毛发与皮肤状态，现场确认适合它的方案。</p></div>
-          <div className="grid">{services.map((service) => <article className="card" key={service.title}><div className="icon" aria-hidden="true">{service.icon}</div><h3>{service.title}</h3><p>{service.description}</p><div className="price">{service.label} <span>{service.price}</span> 起</div></article>)}</div>
+          <div className="section-head"><div><div className="eyebrow">CARE PLANS</div><h2>按需要选，<br />每一分钱都花得明白</h2></div><p>从日常清洁到专项护理，三种方案对应不同需求。到店先看皮毛状态、再确认服务与价格，不临时加项。</p></div>
+          <div className="grid">{services.map((service) => <article className={`card${service.featured ? " featured" : ""}`} key={service.title}>
+            {service.featured && <div className="popular">多数宠主选择</div>}
+            <div className="card-top"><div className="icon" aria-hidden="true">{service.icon}</div><div className="price"><span>{service.price}</span><small>起 / 次</small></div></div>
+            <h3>{service.title}</h3><div className="fit">{service.fit}</div><p className="benefit">{service.benefit}</p>
+            <ul className="service-list">{service.items.map((item) => <li key={item}>{item}</li>)}</ul>
+            <div className="card-bottom"><span>{service.label}</span><a href="#booking" aria-label={`预约${service.title}`}>选择此方案 →</a></div>
+          </article>)}</div>
+          <div className="price-note"><span>透明计价</span> 最终价格会根据宠物品种、体重、毛量及实际护理难度，在服务前与你确认。</div>
         </Reveal></section>
 
         <section className="process" id="process"><Reveal className="wrap">

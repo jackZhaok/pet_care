@@ -10,3 +10,23 @@ footer{padding:32px 0;border-top:1px solid var(--line)}.footer{display:flex;alig
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.card,.btn,.nav-cta{transition:none}}
 @media(max-width:850px){.links{display:none;position:absolute;top:70px;right:0;left:0;background:#fff;padding:24px;border-radius:20px;box-shadow:var(--shadow);flex-direction:column}.links.open{display:flex}.menu{display:block}.hero{min-height:680px}.hero-image:after{background:linear-gradient(180deg,rgba(248,242,232,.97) 0%,rgba(248,242,232,.81) 45%,rgba(248,242,232,.13) 100%)}.hero-image img{object-position:62% center}.hero-inner{height:598px;align-items:flex-start;padding-top:70px}.hero-copy{width:100%}h1{font-size:50px;max-width:600px}.lead{max-width:580px}.floating-note{right:20px}.grid,.steps{grid-template-columns:1fr 1fr}.review-grid,.booking-box{grid-template-columns:1fr}.booking-box{gap:32px}.step:not(:last-child){border:0}}
 @media(max-width:560px){.wrap{width:min(100% - 28px,1180px)}.nav{height:70px}.nav-cta{display:none}.hero-image{inset:70px 0 0}.hero-copy{padding-top:15px}h1{font-size:42px}.lead{font-size:15px}.hero-actions{align-items:stretch;flex-direction:column;width:190px;gap:10px}.trust{gap:18px}.trust b{font-size:17px}.floating-note{display:none}section{padding:78px 0}.section-head{display:block}.section-head h2,.booking h2{font-size:34px;margin-bottom:18px}.grid,.steps{grid-template-columns:1fr}.step:not(:last-child){padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.15)}.review-grid{grid-template-columns:1fr}.quote blockquote{font-size:20px}.booking-box{padding:30px 20px;border-radius:28px}.form{grid-template-columns:1fr}.field.full,.form .btn{grid-column:1}.footer{flex-direction:column;gap:12px;text-align:center}}
+
+/* Clear, benefit-led care plan comparison */
+.services .card{position:relative}
+.services .card.featured{border:2px solid var(--sage);box-shadow:0 14px 38px rgba(64,88,67,.1)}
+.popular{position:absolute;top:0;right:24px;transform:translateY(-50%);padding:5px 13px;border-radius:999px;background:var(--sage-dark);color:#fff;font-size:12px;font-weight:700}
+.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+.card-top .icon{margin-bottom:0}
+.card-top .price{display:flex;align-items:baseline;gap:3px;border:0;padding:0}
+.card-top .price span{font-size:27px;font-weight:800}
+.card-top .price small{font-size:12px;color:#7a857f}
+.fit{font-size:13px;color:var(--sage-dark);font-weight:700}
+.card p.benefit{margin:16px 0 20px;min-height:45px}
+.service-list{list-style:none;padding:18px 0;margin:0;border-top:1px solid var(--line)}
+.service-list li{position:relative;padding-left:22px;margin:7px 0;color:#53615a;font-size:14px}
+.service-list li:before{content:"✓";position:absolute;left:0;color:var(--orange);font-weight:800}
+.card-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:17px;border-top:1px solid var(--line);font-size:13px;color:#78837d}
+.card-bottom a{color:var(--sage-dark);font-weight:800;transition:.2s}
+.card-bottom a:hover{color:var(--orange)}
+.price-note{margin:26px auto 0;text-align:center;color:#717d76;font-size:13px}
+.price-note span{display:inline-block;margin-right:8px;padding:3px 9px;border-radius:99px;background:var(--sage-pale);color:var(--sage-dark);font-weight:700}
