@@ -2,6 +2,7 @@ import Image from "next/image";
 import BookingForm from "./components/BookingForm";
 import NavBar, { Brand } from "./components/NavBar";
 import Reveal from "./components/Reveal";
+import ReviewsCarousel from "./components/ReviewsCarousel";
 
 const services = [
   { icon: "🫧", title: "日常焕新洗护", fit: "适合定期清洁、维持清爽", benefit: "一次完成基础护理，让毛发蓬松、体味更清新。", items: ["双重清洁与护毛", "洁耳、剪甲、脚底毛", "皮毛状态反馈"], label: "猫咪 / 小型犬", price: "¥88" },
@@ -15,10 +16,6 @@ const steps = [
   ["03", "耐心护理", "一宠一位，美容师全程陪伴，拒绝暴力拉扯。"],
   ["04", "清爽回家", "护理反馈、照片记录和居家护理建议一次带走。"],
 ] as const;
-
-function Person({ emoji, name, pet }: { emoji: string; name: string; pet: string }) {
-  return <div className="person"><div className="avatar" aria-hidden="true">{emoji}</div><div><b>{name}</b><small>{pet}</small></div></div>;
-}
 
 export default function Home() {
   return (
@@ -57,8 +54,8 @@ export default function Home() {
         </Reveal></section>
 
         <section className="reviews" id="reviews"><Reveal className="wrap">
-          <div className="section-head"><div><div className="eyebrow">HAPPY STORIES</div><h2>毛孩子喜欢，<br />是最好的口碑</h2></div></div>
-          <div className="review-grid"><div className="quote"><div className="stars" aria-label="五星评价">★★★★★</div><blockquote>“我家布丁以前每次洗澡都很紧张，这次居然趴在美容师怀里睡着了。回家香香软软的，店里还发了全程小视频，真的很安心。”</blockquote><Person emoji="🐶" name="布丁妈妈" pet="比熊 · 2岁" /></div><div className="review-side"><div className="mini"><div className="stars" aria-label="五星评价">★★★★★</div><p>猫咪独立洗护间很安静，吹风也没有应激。细节特别加分。</p><Person emoji="🐱" name="小满的铲屎官" pet="银渐层 · 3岁" /></div><div className="mini"><div className="stars" aria-label="五星评价">★★★★★</div><p>价格透明，美容师很懂狗狗，修出来的圆脑袋太可爱啦！</p><Person emoji="🐩" name="Coco爸爸" pet="贵宾 · 4岁" /></div></div></div>
+          <div className="section-head"><div><div className="eyebrow">HAPPY STORIES</div><h2>毛孩子喜欢，<br />是最好的口碑</h2></div><p>来自日常到店的真实分享。每一次放松的呼吸、每一张开心的笑脸，都是我们认真服务的理由。</p></div>
+          <ReviewsCarousel />
         </Reveal></section>
 
         <section className="booking" id="booking"><Reveal className="wrap"><div className="booking-box">
